@@ -20,6 +20,7 @@ public class AI {
         //salam in ye comment ast
         //salam in comment dovom ast
         //salam in commente mahshide
+        //this is the last comment!!
         Node[] myNodes = world.getMyNodes();
         for (Node source : myNodes) {
 
