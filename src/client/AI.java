@@ -17,7 +17,7 @@ public class AI {
     public void doTurn(World world) {
 
         // fill this method, we've presented a stupid AI for example!
-
+        //salam in ye comment ast
         Node[] myNodes = world.getMyNodes();
         for (Node source : myNodes) {
 
