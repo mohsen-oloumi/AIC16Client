@@ -18,6 +18,7 @@ public class AI {
 
         // fill this method, we've presented a stupid AI for example!
         //salam in ye comment ast
+        //salam in comment dovom ast
         Node[] myNodes = world.getMyNodes();
         for (Node source : myNodes) {
 
