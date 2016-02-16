@@ -14,10 +14,18 @@ import client.model.Node;
  */
 public class AI {
 
-    private int [] allNodes;
+    private int [] allNodes; // all nodes array
+    private static boolean isAllNodeInitialized = false;
+    private static int neighboursCountFactor = 1;
+    private static int attackToEnemyFactor = 1;
+    private static int neighboursHelpFactor = 1;
+    private static int myHelpFactor = 1;
+
+
 
     public void doTurn(World world) {
-
+        if (!isAllNodeInitialized)
+            initializeAllNodes(world);
 
         Node[] myNodes = world.getMyNodes();
         for (Node source : myNodes) {
@@ -32,5 +40,15 @@ public class AI {
             }
         }
     }
+
+    private void initializeAllNodes(World world){}
+    private int emptynNeighboursScore(){return 1;}
+    private int attackToEnemyScore(){return 1;}
+    private int neighboursMaxHelpScore(){return 1;}
+    private int myNodeHelpScore(){return 1;}
+    private Node wichEmptyNeighbourIsBestToGO(int index){return null;}
+    private Node wichNeighbourIsBestToHelp(int index){return null;}
+    private Node wichEnemyIsBestToAttack(int index){return null;}
+    private int whatActionToDo(){return 0;}
 
 }
