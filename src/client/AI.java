@@ -14,13 +14,12 @@ import client.model.Node;
  */
 public class AI {
 
+    private int [] allNodes; //all nodes of map
+
+
     public void doTurn(World world) {
 
-        // fill this method, we've presented a stupid AI for example!
-        //salam in ye comment ast
-        //salam in comment dovom ast
-        //salam in commente mahshide
-        //this is the last comment!!
+
         Node[] myNodes = world.getMyNodes();
         for (Node source : myNodes) {
 
@@ -28,37 +27,9 @@ public class AI {
             Node[] neighbours = source.getNeighbours();
             if (neighbours.length > 0) {
                 Node destination = source.getNeighbours()[0];
-                for (int i = 0; i < neighbours.length; i++) {
-                    if (neighbours[i].getOwner() == -1) {
-                        destination = neighbours[i];
-                        world.moveArmy(source, destination, source.getArmyCount() / 2);
-                        break;
-                    } else if (neighbours[i].getOwner() != world.getMyID()) {
-                        //destination = neighbours[(int) (neighbours.length * Math.random())];
-                        if (neighbours[i].getArmyCount() != world.getMyID() && source.getArmyCount() > 10) {
-                            destination = neighbours[i];
-                            world.moveArmy(source, destination, source.getArmyCount());
-                            break;
-                        } else if (neighbours[i].getArmyCount() != world.getMyID() && source.getArmyCount() > 20) {
-                            destination = neighbours[i];
-                            world.moveArmy(source, destination, source.getArmyCount());
-                            break;
-                        } else {
-                            destination = neighbours[(int) (neighbours.length * Math.random())];
-                            world.moveArmy(source, destination, source.getArmyCount());
-                            break;
-                        }
-                    } else {
-                        destination = neighbours[(int) (neighbours.length * Math.random())];
-                        world.moveArmy(source, destination, source.getArmyCount() / 2);
-                        break;
-                    }
-
-                }
-                System.out.println(destination.getOwner());
+                world.moveArmy(source, destination, source.getArmyCount() / 2);
             }
         }
-        System.out.println("--------------------");
     }
 
 }
